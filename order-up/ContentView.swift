@@ -35,7 +35,7 @@ struct ContentView: View {
                     .font(.title)
                     .monospacedDigit()
                 Button {
-                    teh += 1
+                    a += 1
                     tmp = 1
                 } label: {
                     Image(systemName: "plus.circle.fill")
@@ -87,7 +87,7 @@ struct ContentView: View {
             .background(Color.yellow.opacity(0.22))
             .clipShape(RoundedRectangle(cornerRadius: 16))
 
-            Text("Total  $\(Double(a) * 1.5 + Double(toast) * 2.0, specifier: "%.2f")")
+            Text("Total  $\(Double(a) * 1.5 + Double(teh) * 1.2 + Double(toast) * 2.0, specifier: "%.2f")")
                 .font(.title)
                 .bold()
                 .padding(.top, 8)
@@ -97,6 +97,12 @@ struct ContentView: View {
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .font(.title2)
+
+            Button("Reset") {
+                a = 0
+                teh = 0
+                toast = 0
+            }
         }
         .padding(20)
     }
